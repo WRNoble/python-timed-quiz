@@ -5,23 +5,24 @@ from questions import Add, Multiply
 
 class Quiz:
     questions = []
-    answer = []
+    answers = []
 
     def __init__(self):
         question_types = (Add, Multiply)
         for _ in range (10):
             num1 = random.randint(1, 10)
             num2 = random.randint(1, 10)
-            question = question_types
-            self.questions.append()
+            question = random.choice(question_types)(num1, num2)
+            self.questions.append(question)
 
 
     def take_quiz(self):
+        pass
 
-    
     def ask(self, question):
+        pass
 
-    def total_corret(self):
+    def total_correct(self):
         total = 0
         for answer in self.answers:
             if answer[0]:
@@ -29,5 +30,5 @@ class Quiz:
             return total
 
     def summary(self):
-        print("You got {} out of {} correct!".format(self.total_correct(), len(self.questions)))
-        print("it took you {} seconds total".format((self.end_time-self.start_time).seconds))
+         print("You got {} out of {} correct!".format(self.total_correct(), len(self.questions)))
+         print("it took you {} seconds total.".format((self.end_time-self.start_time).seconds))
