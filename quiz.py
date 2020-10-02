@@ -15,4 +15,7 @@ class Quiz:
     
     def ask(self, question):
 
+    def total_corret(self):
+
     def summary(self):
+        print("You got {} out of {} correct!".format(self.total_correct(), len(self.questions)))
